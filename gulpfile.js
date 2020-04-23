@@ -84,7 +84,16 @@ gulp.task('prebuild', async function() {
         .pipe(gulp.dest('dist/js'))
 
     var buildHtml = gulp.src('app/*.html') // Переносим HTML в продакшен
-        .pipe(gulp.dest('dist'));
+      .pipe(gulp.dest('dist'));
+
+    var buildPhp = gulp.src('app/*.php') // Переносим HTML в продакшен
+      .pipe(gulp.dest('dist'));
+
+    var buildAjax = gulp.src('app/ajax/*.php') // Переносим HTML в продакшен
+      .pipe(gulp.dest('dist/ajax'));
+
+    var buildUploads = gulp.src('app/uploads/**/*.*') // Переносим HTML в продакшен
+      .pipe(gulp.dest('dist/uploads'));
 
 });
 
