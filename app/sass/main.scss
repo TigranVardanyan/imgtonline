@@ -3,10 +3,14 @@ enter css
  */
 .wrapper {
   width: 100%;
-  height: auto;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  .max_upload {
+    padding: 10px;
+  }
 }
 
 .dragDrop {
@@ -15,16 +19,17 @@ enter css
   padding: 30px;
   border-radius: 10px;
   box-sizing: border-box;
-  border: 6px dashed grey;
+  border: 2px dashed grey;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   transition: 0.3s all ease;
   box-shadow: 3px 3px 6px 0px rgba(0, 0, 0, 0.2);
 }
 
 .dragDropHover {
-  border: 6px dashed black;
+  border: 2px dashed black;
   box-shadow: 3px 3px 8px 2px rgba(0, 0, 0, 0.3);
 }
 

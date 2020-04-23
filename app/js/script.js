@@ -35,15 +35,15 @@ dropArea.addEventListener('drop', (e)=>{
 });
 
 function uploadeImage(file) {
-  dropArea.innerHTML = `<button id="btn" class="btn btn-success">Drop image here to upload</button>`;
+  dropArea.innerHTML = `<button id="btn" class="btn btn-success">Upload file</button>
+                        <p>${file.name}</p>`;
   console.log(file);
 
   $('#btn').click(()=> {
     var form_data = new FormData();
     form_data.append('file', file);
-    alert(form_data);  //Выводим инфо по файлам которые будут отправлены на сервер
     $.ajax({
-      url: 'ajax/save-photo.php',
+      url: 'ajax/generateFile.php',
       dataType: 'text',
       cache: false,
       contentType: false,
@@ -51,9 +51,21 @@ function uploadeImage(file) {
       data: form_data,
       type: 'post',
       success: function(php_script_response){
-        alert(php_script_response); //  Выводим ответ от сервера
+        php_script_response = JSON.parse(php_script_response); // Be sure to convert JSON to an object !!
+        function copyClip(){
+          console.log(php_script_response.path)
+          navigator.clipboard.writeText(decodeURI(php_script_response.path));
+        }
+        dropArea.innerHTML = `<button id="btn" class="btn btn-success" onclick="copyClip('${encodeURI(php_script_response.path)}')">Press to copy link</button>
+                              <a id="link" href="${php_script_response.path}">${php_script_response.file_name}</a>`;
+      },
+      error: function(php_script_response) {
+        alert(php_script_response);
       }
     });
   })
 }
 
+function copyClip(text){
+  navigator.clipboard.writeText(decodeURI(text));
+}

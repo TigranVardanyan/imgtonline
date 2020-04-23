@@ -14,12 +14,9 @@
   <div class="dragDrop" id="dragDrop">
     <span>Drop image here to upload</span>
   </div>
+  <p class="max_upload">Max upload size <?php echo ini_get('upload_max_filesize')?></p>
 </div>
 
-
-<div class="mobile">
-  <input type='file' title="Onlineizator" id="file_id"/>
-</div>
 
 <script
     src="https://code.jquery.com/jquery-3.5.0.min.js"
