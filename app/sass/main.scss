@@ -14,12 +14,13 @@ enter css
 }
 
 .dragDrop {
+  cursor: pointer;
   width: 280px;
   height: 280px;
   padding: 30px;
   border-radius: 10px;
   box-sizing: border-box;
-  border: 2px dashed grey;
+  border: 4px dashed grey;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -29,16 +30,32 @@ enter css
 }
 
 .dragDropHover {
-  border: 2px dashed black;
+  border: 4px dashed black;
   box-shadow: 3px 3px 8px 2px rgba(0, 0, 0, 0.3);
 }
 
 .invalidDrop {
   box-shadow: 3px 3px 8px 2px rgba(0, 0, 0, 0.3);
-  background-color: yellow;
+  background-color: orangered;
+  color: white;
   border: none;
 }
 
+.done {
+  background-color: forestgreen;
+  border: none;
+  color: white;
+}
+.link {
+  color: white;
+  text-underline: none;
+  text-decoration: none;
+  &:hover {
+    color: #dbdbdb;
+    text-underline: none;
+    text-decoration: none;
+  }
+}
 span {
   pointer-events: none;
 }
