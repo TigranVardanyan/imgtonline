@@ -1,0 +1,41 @@
+/*
+enter css
+ */
+.wrapper {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dragDrop {
+  width: 280px;
+  height: 280px;
+  padding: 30px;
+  border-radius: 10px;
+  box-sizing: border-box;
+  border: 6px dashed grey;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s all ease;
+  box-shadow: 3px 3px 6px 0px rgba(0, 0, 0, 0.2);
+}
+
+.dragDropHover {
+  border: 6px dashed black;
+  box-shadow: 3px 3px 8px 2px rgba(0, 0, 0, 0.3);
+}
+
+.invalidDrop {
+  box-shadow: 3px 3px 8px 2px rgba(0, 0, 0, 0.3);
+  background-color: yellow;
+  border: none;
+}
+
+span {
+  pointer-events: none;
+}
+
+@import "media";
