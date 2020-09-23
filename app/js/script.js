@@ -22,7 +22,7 @@ dropArea.addEventListener('dragleave',(e) => {
 dropArea.addEventListener('drop', (e)=>{
   e.preventDefault();
   const file = e.dataTransfer.files[0];
-  const formatRegexp = /([^\s]+(\.(jpg|png|gif|bmp))$)/;
+  const formatRegexp = /([^\s]+(\.(jpg|jpeg|png|gif|bmp|tiff|webp|heif))$)/;
   if (!formatRegexp.test(file.name)) {
     dropArea.innerText = "Invalid image format. Please drop valid file";
     dropArea.classList.add('invalidDrop');
