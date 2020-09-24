@@ -23,7 +23,7 @@ dropArea.addEventListener('drop', (e)=>{
   e.preventDefault();
   const file = e.dataTransfer.files[0];
   const formatRegexp = /([^\s]+(\.(jpg|jpeg|png|gif|bmp|tiff|webp|heif))$)/;
-  if (!formatRegexp.test(file.name)) {
+  if (!formatRegexp.test(file.name.toLowerCase())) {
     dropArea.innerText = "Invalid image format. Please drop valid file";
     dropArea.classList.add('invalidDrop');
     dropArea.classList.remove('dragDropHover');
